@@ -1,4 +1,8 @@
-use PHPMock;
+<?php
+namespace WCCT16;
+ 
+use phpmock\phpunit\PHPMock;
+
 public function test_wcct16_get_option() {
 	$get_option = $this->getFunctionMock('WCCT16','get_option');
 	
