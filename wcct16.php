@@ -13,6 +13,16 @@ Text Domain: wcct16
 
 namespace WCCT16;
 
+function wcct16_save_option( $name, $value ){
+	update_option( $name, $value );
+}
 function wcct16_get_option( $name ){
-	return get_option( 'wcct16_' . $name );
+	$option = get_option( 'wcct_' . $name );
+	return get_option( 'wcct_' . $name );
+}
+function wcct16_save_post_meta( $post_id, $meta_key, $meta_value ){
+	update_post_meta( $post_id, 'wcct_' . $meta_key, $meta_value );
+}
+function wcct16_get_post_meta( $post_id, $meta_key, $single ){
+	get_post_meta( $post_id, 'wcct_' . $meta_key, $single );
 }
